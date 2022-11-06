@@ -1,0 +1,6 @@
+project_id                   = "trinnex-service1-365311"
+db_name                      = "postgresql-terraform-private"
+vpc_network                  = "shared-net"
+shared_host_project_id       = "trinnex-host1"
+zone                         = "us-central1-c"
+region                       = "us-central1"

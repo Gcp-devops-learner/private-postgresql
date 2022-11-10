@@ -17,6 +17,6 @@
 terraform {
   backend "gcs" {
     bucket = "postgresql-state"
-    prefix = "private"
+    prefix = "my-sql"
   }
 }

@@ -1,6 +1,6 @@
 # Cloud SQL Database Example
 
-This example shows how to create the Private Postgres Cloud SQL database in a shared VPC Network in the host netowrk using the Terraform module.
+This example shows how to create the Private MySQL Cloud SQL database in a shared VPC Network in the host netowrk using the Terraform module.
 
 ## Run Terraform
 
@@ -29,14 +29,16 @@ terraform destroy
 | vpc\_network| The shared VPC network to provision the postgresql database. This shared network should be shared with the service project | `string` | n/a | yes |
 | shared\_host\_project\_id | The Project ID of the shared host project | `string` | n/a | yes |
 
-## Outputs
 
-| Name | Description |
-|------|-------------|
-| name | The name for Cloud SQL instance |
-| project\_id | The project to run tests against |
-| psql\_conn | The connection name of the master instance to be used in connection strings |
-| psql\_user\_pass | The password for the default user. If not set, a random one will be generated and available in the generated\_user\_password output variable. |
-| private\_ip\_address | The private IPv4 address assigned for the master instance |
-
+## IAP Bastion
+Refer to the below url for documentation
+https://github.com/terraform-google-modules/terraform-google-bastion-host
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## Private MySQL
+Refer to the below url for documentation
+https://github.com/terraform-google-modules/terraform-google-sql-db/tree/master/modules/safer_mysql
+
+## Cloud NAT
+Refer to the below url for documentation
+https://github.com/terraform-google-modules/terraform-google-cloud-nat

@@ -57,3 +57,32 @@ variable "shared_host_project_id" {
   default  = ""
 
 }
+
+variable "subnet_name" {
+  description = "The subnetwork to host the cluster in (required)"
+  type        = string
+  default     = ""
+
+}
+variable "service_account_roles" {
+  type = list(string)
+
+  description = "List of IAM roles to assign to the service account."
+  default = [
+    "roles/logging.logWriter",
+    "roles/monitoring.metricWriter",
+    "roles/monitoring.viewer",
+    "roles/compute.osLogin",
+  ]
+}
+
+variable "scopes" {
+  type = list(string)
+
+  description = "List of scopes to attach to the bastion host"
+  default     = ["cloud-platform"]
+}
+
+variable "router_name" {
+  description = "The name of the GCP Router to associate the NAT to"
+}
